@@ -19,7 +19,6 @@ class DocumentWithApollo extends Document {
   static async getInitialProps(
     ctx: DocumentContext
   ): Promise<DocumentInitialPropsWithApollo> {
-    console.log("LOG:getInitialProps");
     const apolloClient = getApolloClient(true);
     await getDataFromTree(<ctx.AppTree {...ctx.appProps} />);
     const apolloState = apolloClient.extract();

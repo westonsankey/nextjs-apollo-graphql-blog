@@ -9,7 +9,7 @@ const windowApolloState = !isServer && window.__NEXT_DATA__.apolloState;
 
 let CLIENT: ApolloClient<NormalizedCacheObject>;
 
-export function getApolloClient(forceNew: boolean) {
+export function getApolloClient(forceNew?: boolean) {
   if (!CLIENT || forceNew) {
     CLIENT = new ApolloClient({
       ssrMode: isServer,

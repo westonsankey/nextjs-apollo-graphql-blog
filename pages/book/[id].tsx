@@ -15,9 +15,11 @@ export const ALL_BOOKS_QUERY = gql`
 const Book = () => {
   const router = useRouter();
   const { id } = router.query;
-  const { data, loading } = useQuery(ALL_BOOKS_QUERY, { ssr: false });
+  const { data, loading } = useQuery(ALL_BOOKS_QUERY, {
+    fetchPolicy: "cache-first",
+  });
 
-  if (loading) {
+  if (loading || !data) {
     return <p>Loading...</p>;
   }
 

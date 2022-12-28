@@ -10,7 +10,7 @@ export default function App({
   Component,
   pageProps,
 }: AppProps<CustomPageProps>) {
-  const client = getApolloClient(false);
+  const client = getApolloClient();
 
   return (
     <ApolloProvider client={client}>

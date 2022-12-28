@@ -14,7 +14,7 @@ export const ALL_BOOKS_QUERY = gql`
 `;
 
 const Books: NextPage<CustomPageProps> = (props) => {
-  const { data } = useQuery(ALL_BOOKS_QUERY);
+  const { data } = useQuery(ALL_BOOKS_QUERY, { ssr: true });
 
   return (
     <div>
